@@ -9,7 +9,30 @@ Just add like any other ember-cli addon:
 
 * `ember install ember-cli-accounting`
 
-## Ember compatiblity
+## Configuration
+If you don't need all the helpers, you can specify which to whitelist or blacklist using `only` or `except` within your `ember-cli-build.js`:
+
+```js
+module.exports = function(defaults) {
+  var app = new EmberApp(defaults, {
+    'ember-cli-accounting': {
+      only: ['format-money'],
+      except: ['format-number']
+    }
+  });
+  
+  ...
+}
+```
+
+Both `only` and `except` can be safely used together (the addon computes the diff), although it's best if you only use one for your own sanity.
+
+```js
+except: ['pipe'] // imports all helpers except `pipe`
+only: ['pipe'] // imports only `pipe`
+```
+
+## Ember compatibility
 
 Version 1.0.0 and beyond use `Ember.Helper` and helper's autoregistration, and are only compatible 
 with Ember 1.13 and Ember 2.0+
