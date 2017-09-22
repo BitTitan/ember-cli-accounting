@@ -15,7 +15,7 @@ If you don't need all the helpers, you can specify which to whitelist or blackli
 ```js
 module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
-    'ember-cli-accounting': {
+    accounting: {
       only: ['format-money'],
       except: ['format-number']
     }
