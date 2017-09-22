@@ -89,8 +89,8 @@ module.exports = {
   },
 
   generateWhitelist: function(addonConfig) {
-    var only = addonConfig.only || [];
-    var except = addonConfig.except || [];
+    var only = addonConfig.onlyHelpers || [];
+    var except = addonConfig.exceptHelpers || [];
 
     if (except && except.length) {
       return difference(only, except);
@@ -100,8 +100,8 @@ module.exports = {
   },
 
   generateBlacklist: function(addonConfig) {
-    var only = addonConfig.only || [];
-    var except = addonConfig.except || [];
+    var only = addonConfig.onlyHelpers || [];
+    var except = addonConfig.exceptHelpers || [];
 
     if (only && only.length) {
       return intersection(except, only);
