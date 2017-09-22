@@ -9,6 +9,10 @@ var difference = require('./lib/difference');
 module.exports = {
   name: 'accounting',
 
+  config(environment, baseConfig) {
+    console.log(baseConfig);
+  },
+
   included: function(app) {
     this._super.included.apply(this, arguments);
 
